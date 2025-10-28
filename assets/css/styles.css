@@ -1,0 +1,1293 @@
+/* ================================================== */
+/* RESET DE MÁRGENES Y ESPACIOS */
+/* ================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+}
+
+/* ================================================== */
+/* IMPORTAR FUENTES */
+/* ================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400&display=swap');
+
+/* ================================================== */
+/* ESTILOS PARA LA BARRA DE NAVEGACIÓN Y LOGO */
+/* ================================================== */
+
+/* Estilo del navbar - Ajustado para contener el logo */
+.navbar {
+  background-color: #F5F5DC !important;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  min-height: 108px; /* Ajustado para contener logo de 98px + padding */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+.navbar .container {
+  min-height: 108px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo grande centrado normalmente */
+.logo-wrapper {
+  text-align: center;
+  margin-bottom: 0 !important;
+  z-index: 1000;
+  position: relative;
+}
+
+.logo-flotante {
+  height: 98px; /* Doble del tamaño original */
+  width: auto;
+  animation: fadeInLogo 1.2s ease-in-out;
+  filter: drop-shadow(0 2px 4px rgba(121, 66, 35, 0.986));
+  transition: transform 0.3s ease;
+}
+
+.logo-flotante:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeInLogo {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Enlaces de navegación */
+.navbar .nav-link {
+  color: #707070 !important; 
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  z-index: 999;
+  position: relative;
+}
+
+.navbar .nav-link:hover {
+  color: #FF6B35 !important;
+  text-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
+}
+
+.navbar-nav {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Botón hamburguesa */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='gray' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+}
+
+.navbar-collapse {
+  align-items: center;
+}
+
+/* Ajuste del body para navbar fijo */
+body {
+  padding-top: 118px !important; /* Aumentado para evitar solapamiento */
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Asegurar que el primer elemento después del navbar tenga espacio */
+.carousel,
+#carouselExampleCaptions {
+  margin-top: 0;
+  position: relative;
+  z-index: 1020;
+}
+
+/* ================================================== */
+/* ESTILOS DEL CAROUSEL */
+/* ================================================== */
+
+.carousel-image {
+  height: 450px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 0;
+  margin-bottom: 20px;
+  backdrop-filter: blur(2px);
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-caption h5 {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.carousel-caption p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400;
+  font-size: 1.0rem;
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+/* ================================================== */
+/* SECCIÓN BIENVENIDOS */
+/* ================================================== */
+
+.welcome-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 60px 0;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-handwritten {
+  font-family: 'Great Vibes', cursive;
+  color: #2c2c2c;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Efecto máquina de escribir */
+#typing-text,
+.typing-effect {
+  font-size: 3.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 auto 30px auto;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  border-right: 3px solid #2c2c2c;
+  width: 0;
+  animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+  text-align: left;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 26ch; }
+}
+
+@keyframes blink {
+  0%, 50% { border-color: #2c2c2c; }
+  51%, 100% { border-color: transparent; }
+}
+
+.welcome-subtitle {
+  font-size: 1.8rem;
+  color: #495057;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0;
+  animation: fadeInSubtitle 1s ease-in-out 3s forwards;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@keyframes fadeInSubtitle {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================== */
+/* SECCIÓN DE CONTENIDO */
+/* ================================================== */
+
+.content-section {
+  padding: 60px 0;
+  
+}
+
+.video-wrapper,
+.map-wrapper {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-wrapper:hover,
+.map-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* ================================================== */
+/* ESTILOS PARA QUIENES SOMOS */
+/* ================================================== */
+
+#quienes {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%) !important;
+  padding: 60px 20px !important;
+  margin: 0 !important;
+}
+
+.container#quienes,
+div#quienes {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%) !important;
+  max-width: 100% !important;
+}
+
+.card-quienes {
+  max-width: 1000px;
+  background: #ffffff;
+  border: none;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card-quienes:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.6),
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.card-quienes .img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px 0 0 20px;
+}
+
+.card-quienes img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-quienes:hover img {
+  transform: scale(1.05);
+}
+
+.card-quienes .card-body {
+  padding: 30px;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+}
+
+.card-quienes .card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.card-quienes .card-text {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.card-quienes .text-body-secondary {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* ================================================== */
+/* FOOTER */
+/* ================================================== */
+
+footer.footer {
+  background: linear-gradient(180deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%) !important;
+  color: #ffffff !important;
+  padding: 40px 0 20px 0 !important;
+  margin-top: 60px !important;
+  position: relative;
+}
+
+.footer-icons {
+  margin-bottom: 1rem !important;
+}
+
+.footer-icons a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer-icons a:hover {
+  color: #FF6B35 !important;
+  transform: scale(1.2) translateY(-2px);
+  text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+}
+
+.footer-icons a:focus {
+  color: #FF6B35 !important;
+  outline: none;
+}
+
+.footer-text {
+  font-size: 0.9rem !important;
+  color: #cccccc !important;
+  margin-bottom: 0 !important;
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer.footer .container {
+  max-width: 1200px;
+}
+
+.footer-icons a,
+.footer-icons a:link,
+.footer-icons a:visited {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 1rem;
+  color: wheat;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+  font-size: 1rem;
+}
+
+.footer-icons a:hover,
+.footer-icons a:focus {
+  color: #FF6B35;
+  text-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
+}
+
+.footer-icons a .icon {
+  margin-right: 0.5rem;
+  transition: fill 0.3s, filter 0.3s;
+}
+
+.footer-icons a:hover .icon,
+.footer-icons a:focus .icon {
+  fill: #FF6B35;
+}
+
+/* ================================================== */
+/* ESTILOS GENERALES */
+/* ================================================== */
+
+.padding-section {
+  padding: 1rem 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================================================== */
+/* RESPONSIVE DESIGN */
+/* ================================================== */
+
+/* Tablets y pantallas medianas (768px - 991px) */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Tablets (768px - 991px) */
+@media (max-width: 768px) {
+  .logo-flotante {
+    height: 84px;
+  }
+  
+  .navbar {
+    min-height: 94px;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+  
+  .navbar .container {
+    min-height: 94px;
+  }
+  
+  body {
+    padding-top: 104px !important;
+  }
+  
+/* ================================================== */
+/* ESTILOS DEL CAROUSEL AJUSTADOS Y LEGIBLES */
+/* ================================================== */
+
+.carousel-image {
+  height: 700px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Texto del carrusel */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 25px;
+  border-radius: 8px;
+  backdrop-filter: blur(2px);
+  width: 80%;
+  margin: 0 auto 25px;
+}
+
+.carousel-caption h5 {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700;
+  font-size: 2rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+/* ================================================== */
+/* RESPONSIVE CAROUSEL */
+/* ================================================== */
+
+/* Pantallas grandes (1200px+) */
+@media (min-width: 1200px) {
+  .carousel-image { height: 650px; }
+  .carousel-caption h5 { font-size: 2.2rem; }
+  .carousel-caption p { font-size: 1.2rem; }
+}
+
+/* Pantallas medianas (992px a 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .carousel-image { height: 550px; }
+  .carousel-caption { width: 70%; padding: 20px; }
+  .carousel-caption h5 { font-size: 1.6rem; }
+  .carousel-caption p { font-size: 1rem; }
+}
+
+/* Tablets (768px a 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .carousel-image { height: 300px; }
+  .carousel-caption { width: 60%; padding: 18px; }
+  .carousel-caption h5 { font-size: 1.45rem; }
+  .carousel-caption p { font-size: 0.95rem; line-height: 1.4; }
+}
+
+/* Celulares grandes (576px a 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .carousel-image { height: 200px; }
+  .carousel-caption {
+    width: 75%;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+  .carousel-caption h5 {
+    font-size: 1.25rem; /* 📌 antes era 1rem —ahora más legible */
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .carousel-caption p {
+    font-size: 0.95rem; /* 📌 antes 0.8rem —mejor contraste */
+    line-height: 1.4;
+  }
+}
+
+/* Celulares pequeños (hasta 575px) */
+@media (max-width: 575px) {
+  .carousel-image { height: 260px; }
+  .carousel-caption {
+    padding: 12px;
+    width: 75%;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+  .carousel-caption h5 {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+  .carousel-caption p {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+}
+
+/* Móviles muy pequeños (hasta 375px) */
+@media (max-width: 375px) {
+  .carousel-image { height: 200px; }
+  .carousel-caption h5 { font-size: 0.8rem; }
+  .carousel-caption p { font-size: 0.65rem; }
+}
+  
+  .typing-effect {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    border-right-width: 2px;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.6rem;
+    margin-top: 15px;
+  }
+  
+  .welcome-section {
+    padding: 50px 0;
+    min-height: 350px;
+    text-align: center;
+  }
+  
+  .content-section {
+    padding: 40px 0;
+  }
+  
+  .video-wrapper,
+  .map-wrapper {
+    margin-bottom: 2rem;
+  }
+  
+  @keyframes typing {
+    100% { width: 32ch; }
+  }
+  
+  .footer-icons a {
+    margin: 0 8px;
+  }
+  
+  .footer-icons .fa-2x {
+    font-size: 1.5rem !important;
+  }
+  
+  .footer-text {
+    font-size: 0.8rem !important;
+    padding: 0 15px;
+  }
+  
+  /* Quienes Somos Responsive */
+  .card-quienes {
+    max-width: 100%;
+  }
+  
+  .card-quienes .img-container {
+    border-radius: 20px 20px 0 0;
+    max-height: 250px;
+  }
+  
+  .card-quienes .card-title {
+    font-size: 24px;
+  }
+  
+  .card-quienes .card-text {
+    font-size: 14px;
+  }
+}
+
+/* Móviles grandes (576px - 767px) */
+@media (max-width: 576px) {
+  .logo-flotante {
+    height: 35px;
+  }
+  
+  .navbar {
+    min-height: 42px;
+    max-height: 42px;
+    padding-top: 0.05rem;
+    padding-bottom: 0.05rem;
+  }
+  
+  .navbar .container {
+    min-height: 42px;
+    max-height: 42px;
+  }
+  
+  body {
+    padding-top: 52px !important;
+  }
+  
+  .navbar-toggler {
+    font-size: 0.75rem;
+    padding: 0.1rem 0.2rem;
+    height: 32px;
+    width: 40px;
+  }
+  
+  .navbar-toggler-icon {
+    width: 1em;
+    height: 1em;
+  }
+  
+  .logo-wrapper {
+    display: none;
+  }
+  
+  .navbar .container {
+    justify-content: center;
+  }
+  
+  .carousel-image {
+    height: 250px;
+  }
+  
+  .carousel-caption {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 0.45rem;
+    margin-bottom: 5px;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.35rem;
+    line-height: 1.3;
+  }
+  
+  .typing-effect {
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.3rem;
+    padding: 0 15px;
+  }
+  
+  .welcome-section {
+    padding: 40px 0;
+    min-height: 280px;
+  }
+  
+  .custom-handwritten {
+    padding: 0 10px;
+  }
+  
+  .content-section {
+    padding: 30px 0;
+  }
+  
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  @keyframes typing {
+    100% { width: 38ch; }
+  }
+  
+  .footer-icons a {
+    margin: 0 5px;
+  }
+  
+  .footer-text {
+    font-size: 0.75rem !important;
+    line-height: 1.4;
+  }
+  
+  /* Quienes Somos Móvil */
+  #quienes {
+    padding: 40px 15px;
+  }
+  
+  .card-quienes .card-body {
+    padding: 20px;
+  }
+  
+  .card-quienes .card-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .card-quienes .card-text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+/* Móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
+  .logo-flotante {
+    height: 30px;
+  }
+  
+  .navbar {
+    min-height: 38px;
+    max-height: 38px;
+    padding-top: 0.02rem;
+    padding-bottom: 0.02rem;
+  }
+  
+  .navbar .container {
+    min-height: 38px;
+    max-height: 38px;
+  }
+  
+  body {
+    padding-top: 48px !important;
+  }
+  
+  .navbar-toggler {
+    font-size: 0.7rem;
+    padding: 0.08rem 0.15rem;
+    height: 28px;
+    width: 35px;
+  }
+  
+  .navbar-toggler-icon {
+    width: 0.9em;
+    height: 0.9em;
+  }
+  
+  .logo-wrapper {
+    display: none;
+  }
+  
+  .navbar .container {
+    justify-content: center;
+  }
+  
+  .carousel-image {
+    height: 220px;
+  }
+  
+  .carousel-caption {
+    display: none !important;
+  }
+  
+  .typing-effect {
+    font-size: 1.8rem;
+    letter-spacing: 0px;
+    border-right-width: 2px;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.1rem;
+    padding: 0 20px;
+    line-height: 1.4;
+  }
+  
+  .welcome-section {
+    padding: 30px 0;
+    min-height: 250px;
+  }
+  
+  .content-section {
+    padding: 25px 0;
+  }
+  
+  .video-wrapper,
+  .map-wrapper {
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  @keyframes typing {
+    100% { width: 42ch; }
+  }
+  
+  /* Quienes Somos Móvil Pequeño */
+  #quienes {
+    padding: 30px 10px;
+    border-radius: 10px;
+  }
+  
+  .card-quienes {
+    border-radius: 15px;
+  }
+  
+  .card-quienes .card-title {
+    font-size: 18px;
+  }
+  
+  .card-quienes .card-text {
+    font-size: 12px;
+  }
+}
+
+/* Móviles extra pequeños (hasta 375px) */
+@media (max-width: 375px) {
+  .typing-effect {
+    font-size: 1.4rem;
+  }
+  
+  .welcome-subtitle {
+    font-size: 0.9rem;
+    padding: 0 30px;
+  }
+  
+  .welcome-section {
+    padding: 20px 0;
+    min-height: 180px;
+  }
+  
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .custom-handwritten {
+    padding: 0 30px;
+    max-width: 100%;
+  }
+  
+  @keyframes typing {
+    100% { width: 30ch; }
+  }
+  
+  .card-quienes .card-title {
+    font-size: 16px;
+  }
+  
+  .card-quienes .card-text {
+    font-size: 11px;
+  }
+}
+
+/* Landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .welcome-section {
+    min-height: 200px;
+    padding: 20px 0;
+  }
+  
+  .typing-effect {
+    font-size: 1.5rem;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  .carousel-image {
+    height: 200px;
+  }
+}
+
+/* Pantallas grandes (1200px+) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .typing-effect {
+    font-size: 5rem;
+  }
+  
+  .welcome-subtitle {
+    font-size: 2.5rem;
+  }
+  
+  .carousel-image {
+    height: 600px;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1.8rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Para usuarios que prefieren movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .typing-effect {
+    animation: none;
+    border-right: none;
+    width: auto;
+  }
+  
+  .welcome-subtitle {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .logo-flotante {
+    animation: none;
+  }
+  
+  .card-quienes,
+  .card-quienes img {
+    transition: none;
+  }
+}
+
+/* ================================================== */
+/* SECCIÓN HORARIO DE REUNIONES FAMILIARES */
+/* ================================================== */
+
+.section-horario {
+  background: linear-gradient(135deg, #1f1f1f, #2e2e2e);
+  color: #f4f4f4;
+  font-family: 'Montserrat', sans-serif;
+  padding: 80px 0;
+}
+
+.horario-familiar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.horario-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.horario-texto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.horario-titulo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.horario-detalle p {
+  font-size: 1.2rem;
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+.horario-imagen {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.horario-imagen img {
+  max-width: 80%;
+  border-radius: 20px;
+  height: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.horario-imagen img:hover {
+  transform: scale(1.03);
+}
+
+/* ================================================== */
+/* RESPONSIVE DESIGN */
+/* ================================================== */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 992px) {
+  .horario-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .horario-familiar {
+    padding: 40px 15px !important;
+  }
+
+  .horario-texto {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .horario-imagen {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-horario {
+    padding: 50px 10px;
+  }
+}
+
+/* Celulares y pantallas pequeñas */
+@media (max-width: 576px) {
+  .section-horario {
+    padding: 40px 10px !important;
+  }
+
+  .horario-container {
+    gap: 10px !important;
+  }
+
+  .horario-imagen img {
+    width: 90%;
+    height: auto;
+  }
+
+  /* Elimina espacios innecesarios */
+  .horario-familiar {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .horario-texto {
+    padding: 0 !important;
+  }
+}
+
+/* ================================================== */
+/* SECCIÓN CONTACTO */
+/* ================================================== */
+
+.section-contacto {
+  background: linear-gradient(135deg, #0f0f0f, #2b2b2b);
+  color: #f2f2f2;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contacto-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contacto-titulo {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #fff;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.contacto-titulo::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #c8a864;
+  margin: 12px auto 0 auto;
+  border-radius: 2px;
+}
+
+.contacto-info {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.contacto-info i {
+  color: #c8a864;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.contacto-redes a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.6rem;
+  color: #f2f2f2;
+  transition: all 0.3s ease;
+}
+
+.contacto-redes a:hover {
+  color: #c8a864;
+  transform: translateY(-3px);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 768px) {
+  .section-contacto {
+    padding: 60px 15px;
+  }
+
+  .contacto-titulo {
+    font-size: 1.9rem;
+  }
+
+  .contacto-info {
+    font-size: 1rem;
+  }
+
+  .contacto-redes a {
+    font-size: 1.4rem;
+    margin: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacto-titulo {
+    font-size: 1.6rem;
+  }
+
+  .contacto-info {
+    line-height: 1.6;
+  }
+}
+
+.contacto-frase {
+  font-size: 1rem;
+  color: #dcdcdc;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* ================================================== */
+/* AJUSTES RESPONSIVOS PARA SECCIÓN QUIÉNES SOMOS */
+/* ================================================== */
+
+.icono-quienes {
+  font-size: 3.5rem;
+  color: #c8a864;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icono-quienes:hover {
+  transform: scale(1.1);
+  color: #d8c18a;
+}
+
+/* En pantallas grandes, se ocultan los íconos y se muestran las imágenes */
+@media (min-width: 768px) {
+  .icono-quienes {
+    display: none !important;
+  }
+}
+
+/* En pantallas pequeñas, se ocultan las imágenes */
+@media (max-width: 767.98px) {
+  .img-container {
+    display: none !important;
+  }
+
+  .card-quienes {
+    text-align: center;
+  }
+
+  .card-quienes .card-body {
+    padding: 20px;
+  }
+
+  .card-quienes .card-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* ================================================== */
+/* SECCIÓN BIENVENIDOS — RESPONSIVA Y CENTRADA */
+/* ================================================== */
+
+.welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh; /* ocupa buena parte de la pantalla */
+  padding: 2rem 1rem;
+}
+
+/* Contenedor del texto */
+.welcome-section .container {
+  max-width: 900px;
+}
+
+/* Título con efecto de escritura */
+.typing-effect {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+  font-size: clamp(1.8rem, 5vw, 3.5rem); /* se ajusta al tamaño de pantalla */
+  line-height: 1.2;
+}
+
+/* Subtítulo */
+.welcome-section h3 {
+  margin-top: 1rem;
+  font-size: clamp(1rem, 3vw, 1.5rem); /* también adaptable */
+}
+
+/* Asegura centrado perfecto incluso en móviles */
+@media (max-width: 768px) {
+  .welcome-section {
+    min-height: 50vh;
+    padding: 3rem 1rem;
+  }
+
+  .typing-effect {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+/* En pantallas grandes, centrado equilibrado */
+@media (min-width: 1200px) {
+  .welcome-section {
+    min-height: 70vh;
+  }
+}
+
+
+/* ================================================== */
+/* 🔧 CORRECCIÓN: SCROLL HORIZONTAL INDESEADO EN MÓVILES */
+/* ================================================== */
+
+/* Evita desbordamiento horizontal global */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* Asegura que el contenedor principal nunca exceda el ancho */
+.container, .container-fluid, .row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  max-width: 100% !important;
+  overflow-x: hidden;
+}
