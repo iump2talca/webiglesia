@@ -193,6 +193,18 @@ body {
   animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
   text-align: left;
 }
+/* Para pantallas pequeñas (celulares) */
+@media (max-width: 480px) {
+  h1#bienvenido {
+    font-size: 24px; /* ajusta según lo que se vea bien */
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  h1#bienvenido {
+    font-size: 36px; /* tablets o pantallas medianas */
+  }
+}
 
 @keyframes typing {
   0% { width: 0; }
@@ -1290,4 +1302,60 @@ html, body {
   padding-left: 0 !important;
   max-width: 100% !important;
   overflow-x: hidden;
+}
+
+/* ================================================== */
+/* EFECTO DE TEXTO ESCRIBIÉNDOSE - BIENVENIDOS */
+/* ================================================== */
+
+.typing-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 5rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #fff;
+  width: 0;
+  animation: typing 3s steps(20, end) forwards, blink 0.7s infinite;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Animaciones */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ================================================== */
+/* RESPONSIVIDAD - AJUSTAR TAMAÑO DE TEXTO */
+/* ================================================== */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 992px) {
+  #typing-text {
+    font-size: 4rem !important;
+    text-align: center;
+  }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+  #typing-text {
+    font-size: 2.5rem !important;
+    text-align: center;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  #typing-text {
+    font-size: 1.2rem !important;
+    text-align: center;
+  }
 }
