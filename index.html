@@ -46,7 +46,7 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#titulo">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#quienes">¿Quiénes somos?</a>
@@ -73,8 +73,8 @@
 
   <main>
  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&display=swap" rel="stylesheet">
-<div class="container">
-  <section class="titulo-principal d-md-block pt-4">
+<div id="titulo" class="container mb-4 padding-block-5"  >
+  <section class="titulo-principal">
   <h1>Iglesia Unida Metodista Pentecostal</h1>
   <p>Templo Ven a Cristo, Talca</p>
   </section>
@@ -313,34 +313,26 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
-  const navbarCollapse = document.querySelector('.navbar-collapse');
-  const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', function () {
-      // Si el menú está visible (modo colapsado), ciérralo instantáneamente
-      if (navbarCollapse.classList.contains('show')) {
-        navbarCollapse.style.transition = 'none'; // elimina la animación para que no se note
-        bsCollapse.hide();
-        setTimeout(() => navbarCollapse.style.transition = '', 50); // la vuelve a activar por si se necesita luego
-      }
-
-      // Desplazamiento suave hacia la sección (sin afectar el cierre)
-      const targetId = this.getAttribute('href');
-      if (targetId.startsWith('#')) {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
+  // Selecciona todos los enlaces dentro del menú offcanvas
+  const offcanvasLinks = document.querySelectorAll('.offcanvas-body .nav-link');
+  
+  // Selecciona el componente offcanvas
+  const offcanvasElement = document.querySelector('#offcanvasNavbar');
+  
+  // Crea la instancia de Bootstrap Offcanvas
+  const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+  
+  // Cierra el menú al hacer clic en cualquier enlace
+  offcanvasLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      offcanvas.hide();
     });
   });
 });
 </script>
+
     
   </main>
 
