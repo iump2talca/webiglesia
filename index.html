@@ -26,45 +26,49 @@
 <body>
 
   <header>
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg fixed-top nav-animated shadow-sm py-0">
-    <div class="container flex-column flex-lg-row position-relative align-items-center">
-
-      <!-- Botón hamburguesa solo en móvil -->
-      <button class="navbar-toggler mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSplit" aria-controls="navbarSplit" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Menú dividido -->
-      <div class="collapse navbar-collapse w-100 justify-content-between" id="navbarSplit">
-        <!-- Izquierda -->
-        <ul class="navbar-nav flex-row flex-lg-row justify-content-center mx-auto mb-0">
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#quienes">¿QUIENES SOMOS?</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#misionvision">MISIÓN / VISIÓN</a>
-          </li>
-        </ul>
+   <div class="container-fluid p-0">
+    <nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
      <!-- Logo siempre arriba y centrado -->
-      <div class="logo-wrapper text-center">
+      <div class="logo-ven">
         <a class="navbar-brand d-inline-block" href="#">
           <img src="assets/images/IglesiaUnida-2Talca-Translucida2.png" alt="Logo" class="logo-flotante">
         </a>
       </div>
-        <!-- Derecha -->
-        <ul class="navbar-nav flex-row flex-lg-row justify-content-center mx-auto mb-0">
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#horarios">HORARIOS</a>
+    <button class="navbar-toggler "  style="margin-right: 2%;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Ven a Cristo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#contacto">CONTÁCTANOS</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#quienes">¿Quiénes somos?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#misionvision">Misión/Visión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#horarios">Horarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contáctanos</a>
           </li>
         </ul>
       </div>
     </div>
-  </nav>
-    </div>
+  </div>
+
+ 
+
+</nav>
+   </div>
   </header>
 
   <main>
