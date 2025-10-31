@@ -27,15 +27,15 @@ html, body {
 /* Estilo del navbar - Ajustado para contener el logo */
 .navbar {
   background-color: #F5F5DC !important;
-  padding-top: 0rem;
-  padding-bottom: 0rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   min-height: 108px; /* Ajustado para contener logo de 98px + padding */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1030;
 }
 
 .navbar .container {
@@ -711,7 +711,7 @@ html {
   }
   
   .custom-handwritten {
-    padding: 0 10px;
+    padding: 0 0px;
   }
   
   .content-section {
@@ -1355,10 +1355,7 @@ html, body {
 /* Celulares pequeños */
 @media (max-width: 480px) {
   #typing-text {
-    font-size: 1.8rem !important;
+    font-size: 2.0rem !important;
     text-align: center;
-  }
-  .welcome-section{
-    padding: 12% !important;
   }
 }
