@@ -296,6 +296,8 @@ body {
 
 .video-wrapper,
 .map-wrapper {
+  width: 90%;
+  margin-left: 5%;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -949,6 +951,11 @@ html {
   }
 }
 
+.title-encuentranos{
+  font-size: 16px;
+  margin-left: 5%;
+}
+
 /* Landscape en móviles */
 @media (max-height: 500px) and (orientation: landscape) {
   .welcome-section {
@@ -1046,7 +1053,7 @@ html {
 }
 
 .horario-texto {
-  flex: 1;
+  flex: 2;
   min-width: 300px;
 }
 
@@ -1320,7 +1327,7 @@ html {
 /* Asegura centrado perfecto incluso en móviles */
 @media (max-width: 768px) {
   .welcome-section {
-    min-height: 50vh;
+    min-height: 30vh;
     padding: 3rem 1rem;
   }
 
