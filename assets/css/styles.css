@@ -1353,7 +1353,6 @@ html {
 /* Evita desbordamiento horizontal global */
 html, body {
   max-width: 100%;
-  overflow-x: hidden !important;
 }
 
 /* Asegura que el contenedor principal nunca exceda el ancho */
