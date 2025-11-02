@@ -1072,6 +1072,7 @@ html {
 
 .horario-imagen {
   flex: 1;
+  margin-right: 5%;
   min-width: 280px;
   display: flex;
   justify-content: center;
