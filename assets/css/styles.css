@@ -1053,7 +1053,7 @@ html {
 }
 
 .horario-texto {
-  flex: 2;
+  flex: 1;
   min-width: 300px;
 }
 
