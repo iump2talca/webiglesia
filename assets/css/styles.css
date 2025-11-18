@@ -171,6 +171,7 @@ body {
 /* ================================================== */
 
 .carousel-image {
+  filter: blur(5px);
   height: 450px;
   object-fit: cover;
   object-position: center;
